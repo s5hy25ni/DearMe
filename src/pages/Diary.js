@@ -46,7 +46,8 @@ const Diary = () => {
     return (
       <div className="DiaryPage">
         <MyHeader
-          headText={`${getStringDate(new Date(data.date))} 기록`}
+          // headText={`${getStringDate(new Date(data.date))} 기록`}
+          headText={`${getStringDate(new Date(data.date)).split("-")[0]}년 ${getStringDate(new Date(data.date)).split("-")[1]}월 ${getStringDate(new Date(data.date)).split("-")[2]}일의  기록`}
           leftChild={
             <MyButton text={"< 뒤로가기"} onClick={() => navigate(-1)} />
           }
@@ -59,21 +60,21 @@ const Diary = () => {
         />
         <article>
           <section>
-            <h4>오늘의 감정</h4>
+            <h4>이 날의 기분</h4>
             <div
               className={[
                 "diary_img_wrapper",
                 `diary_img_wrapper_${data.emotion}`,
               ].join(" ")}
             >
-              <img src={curEmotionData.emotion_img} />
+              <img src={curEmotionData.emotion_img} style={{width: 100, height: 100}} />
               <div className="emotion_descript">
                 {curEmotionData.emotion_descript}
               </div>
             </div>
           </section>
           <section>
-            <h4>오늘의 일기</h4>
+            <h4>이 날의 생각</h4>
             <div className="diary_content_wrapper">
               <p>{data.content}</p>
             </div>

@@ -237,8 +237,9 @@ header button {
 
   box-sizing: border-box;
   width: 100%;
-  min-height: 200px;
-  resize: vertical;
+  min-height: 20rem;
+  resize : none;
+  overflow : auto;
 
   border: none;
   border-radius: 5px;
@@ -247,9 +248,18 @@ header button {
   padding: 20px;
 }
 
+.DiaryEditor textarea::-webkit-scrollbar {
+  width: 5px;
+  background-color: #ececec;
+}
+
+.DiaryEditor textarea::-webkit-scrollbar-thumb {
+  background-color: grey;
+}
+
 .DiaryEditor .control_box {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
 }
 
@@ -310,8 +320,7 @@ header button {
 
 .DiaryPage section {
   width: 100%;
-  margin-bottom: 100px;
-
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -325,8 +334,8 @@ header button {
 
 .DiaryPage .diary_img_wrapper {
   background-color: #ececec;
-  width: 250px;
-  height: 250px;
+  width: 150px;
+  height: 150px;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -351,20 +360,31 @@ header button {
 }
 
 .DiaryPage .emotion_descript {
-  font-size: 25px;
+  font-size: 20px;
   color: white;
 }
 
 .DiaryPage .diary_content_wrapper {
   width: 100%;
+  height: 30rem;
   background-color: #ececec;
   border-radius: 5px;
   word-break: keep-all;
   overflow-wrap: break-word;
+  overflow: auto;
+}
+
+.DiaryPage .diary_content_wrapper::-webkit-scrollbar {
+  width: 5px;
+  background-color: #ececec;
+}
+
+.DiaryPage .diary_content_wrapper::-webkit-scrollbar-thumb {
+  background-color: grey;
 }
 
 .DiaryPage .diary_content_wrapper p {
-  padding: 20px;
+  padding: 10px;
   text-align: left;
   font-size: 20px;
   font-family: "Yeon Sung";

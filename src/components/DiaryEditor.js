@@ -68,29 +68,19 @@ const DiaryEditor = ({ isEdit, originData }) => {
           <MyButton text={"< 뒤로가기"} onClick={() => navigate(-1)} />
         }
         rightChild={
-          isEdit && (
-            <MyButton
-              text={"삭제하기"}
-              type={"negative"}
-              onClick={handleRemove}
-            />
-          )
+          <MyButton
+          text={"작성완료"}
+          type={"positive"}
+          onClick={handleSubmit}
+        />
         }
       />
       <div>
         <section>
-          <h4>오늘은 언제인가요?</h4>
-          <div className="input_box">
-            <input
-              className="input_date"
-              value={date}
-              onChange={(e) => setDate(e.target.value)}
-              type="date"
-            />
-          </div>
+          <h4>오늘은 {date.split("-")[0]}년 {date.split("-")[1]}월 {date.split("-")[2]}일 입니다.</h4>
         </section>
         <section>
-          <h4>오늘의 감정</h4>
+          <h4>오늘 기분은 어떠신가요?</h4>
           <div className="input_box emotion_list_wrapper">
             {emotionList.map((it) => (
               <EmotionItem
@@ -103,24 +93,26 @@ const DiaryEditor = ({ isEdit, originData }) => {
           </div>
         </section>
         <section>
-          <h4>오늘의 일기</h4>
+          <h4>오늘 하루는 어떠셨나요?</h4>
           <div className="input_box text_wrapper">
             <textarea
-              placeholder="오늘은 어땠나요"
+              placeholder="당신의 하루가 궁금합니다."
               ref={contentRef}
               value={content}
+              maxLength={1500}
               onChange={(e) => setContent(e.target.value)}
             />
           </div>
         </section>
         <section>
-          <div className="control_box">
-            <MyButton text={"취소하기"} onClick={() => navigate(-1)} />
-            <MyButton
-              text={"작성완료"}
-              type={"positive"}
-              onClick={handleSubmit}
-            />
+          <div className="control_box">{
+            isEdit &&
+              <MyButton
+                text={"삭제하기"}
+                type={"negative"}
+                onClick={handleRemove}
+              />
+          }         
           </div>
         </section>
       </div>
