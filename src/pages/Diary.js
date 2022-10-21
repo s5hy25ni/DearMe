@@ -5,6 +5,7 @@ import { getStringDate } from "../util/date";
 import { emotionList } from "../util/emotion";
 
 import MyHeader from "../components/MyHeader";
+import MyFooter from "../components/MyFooter";
 import MyButton from "../components/MyButton";
 
 const Diary = () => {
@@ -49,13 +50,7 @@ const Diary = () => {
           // headText={`${getStringDate(new Date(data.date))} 기록`}
           headText={`${getStringDate(new Date(data.date)).split("-")[0]}년 ${getStringDate(new Date(data.date)).split("-")[1]}월 ${getStringDate(new Date(data.date)).split("-")[2]}일의  기록`}
           leftChild={
-            <MyButton text={"< 뒤로가기"} onClick={() => navigate(-1)} />
-          }
-          rightChild={
-            <MyButton
-              text={"수정하기"}
-              onClick={() => navigate(`/edit/${data.id}`)}
-            />
+            <button onClick={() => navigate(-1)}><img className="img_button" src="../../assets/back.png" /></button>
           }
         />
         <article>
@@ -80,6 +75,21 @@ const Diary = () => {
             </div>
           </section>
         </article>
+        <MyFooter
+        leftChild={
+          <MyButton 
+            text={"삭제하기"} 
+            type={"negative"}
+            onClick={() => navigate(-1)} />
+        }
+        rightChild={
+          <MyButton
+            text={"수정하기"}
+            type={"neutral"}
+            onClick={() => navigate(`/edit/${data.id}`)}
+          />
+        }
+      />
       </div>
     );
   }
