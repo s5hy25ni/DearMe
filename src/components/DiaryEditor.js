@@ -74,7 +74,7 @@ const DiaryEditor = ({ isEdit, originData }) => {
           onClick={handleSubmit}
           /> :
           <MyButton
-          text={"작성완료ㅋㅋ"}
+          text={"작성완료"}
           type={"positive"}
           onClick={handleSubmit}
         />

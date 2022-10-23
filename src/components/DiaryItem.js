@@ -34,8 +34,8 @@ const DiaryItem = ({ id, emotion, content, date }) => {
         <div className="diary_content_preview">{content.slice(0, 25)}</div>
       </div>
       <div className="btn_wrapper">
-        <MyButton onClick={goEdit} text={"수정하기 끝"} type={"neutral"} />
-        <MyButton onClick={goEdit} text={"삭제하기모르겠당!"} type={"negative"} />
+        <MyButton onClick={goEdit} text={"수정하기"} type={"neutral"} />
+        <MyButton onClick={goEdit} text={"삭제하기"} type={"negative"} />
       </div>
     </div>
   );
