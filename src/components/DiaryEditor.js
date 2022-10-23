@@ -63,11 +63,16 @@ const DiaryEditor = ({ isEdit, originData }) => {
   return (
     <div className="DiaryEditor">
       <MyHeader
-        headText={isEdit ? "일기 수정하기" : "새 일기쓰기"}
+        headText={isEdit ? "일기 수정하기" : "일기 작성하기"}
         leftChild={
           <MyButton text={"< 뒤로가기"} onClick={() => navigate(-1)} />
         }
-        rightChild={
+        rightChild={isEdit ?
+          <MyButton
+          text={"수정완료"}
+          type={"neutral"}
+          onClick={handleSubmit}
+          /> :
           <MyButton
           text={"작성완료"}
           type={"positive"}
@@ -102,17 +107,6 @@ const DiaryEditor = ({ isEdit, originData }) => {
               maxLength={1500}
               onChange={(e) => setContent(e.target.value)}
             />
-          </div>
-        </section>
-        <section>
-          <div className="control_box">{
-            isEdit &&
-              <MyButton
-                text={"삭제하기"}
-                type={"negative"}
-                onClick={handleRemove}
-              />
-          }         
           </div>
         </section>
       </div>

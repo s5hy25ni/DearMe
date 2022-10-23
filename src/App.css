@@ -62,6 +62,11 @@ body {
   color: white;
 }
 
+.MyButton_neutral {
+  background-color: #fdce17;
+  color: white;
+}
+
 /* HEADER */
 header {
   padding: 20px 0;
@@ -92,6 +97,36 @@ header .head_btn_right {
 
 header button {
   font-family: 'Nanum Pen Script';
+}
+
+.img_button {
+  width: 30px;
+  height: 30px;
+}
+
+footer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: space-between
+}
+
+footer > div {
+  display: flex;
+}
+
+footer .foot_btn_left {
+  width: 25%;
+  justify-content: start;
+}
+
+footer .foot_btn_right {
+  width: 25%;
+  justify-content: end;
+}
+
+footer button {
+  font-family: "Nanum Pen Script";
 }
 
 /* DiaryList */
@@ -164,7 +199,7 @@ header button {
 
 .DiaryItem .info_wrapper {
   flex-grow: 1;
-  margin-left: 10px;
+  margin-left: 20px;
   cursor: pointer;
 }
 
@@ -222,12 +257,12 @@ header button {
 .DiaryEditor textarea {
   font-family: "Nanum Pen Script";
   font-size: 20px;
-
   box-sizing: border-box;
   width: 100%;
+  height: 20vh;
+  resize : none;
+  overflow : auto;
   min-height: 200px;
-  resize: vertical;
-
   border: none;
   border-radius: 5px;
   background-color: #ececec;
@@ -238,6 +273,16 @@ header button {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: #ececec;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: grey;
+
 }
 
 /* EmotionItem */
@@ -292,11 +337,9 @@ header button {
 
 /* Diary */
 
-.DiaryPage {}
-
 .DiaryPage section {
   width: 100%;
-  margin-bottom: 100px;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -310,8 +353,8 @@ header button {
 
 .DiaryPage .diary_img_wrapper {
   background-color: #ececec;
-  width: 250px;
-  height: 250px;
+  width: 150px;
+  height: 150px;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -340,16 +383,18 @@ header button {
 }
 
 .DiaryPage .emotion_descript {
-  font-size: 25px;
+  font-size: 20px;
   color: white;
 }
 
 .DiaryPage .diary_content_wrapper {
   width: 100%;
+  height: 25vh;
   background-color: #ececec;
   border-radius: 5px;
   word-break: keep-all;
   overflow-wrap: break-word;
+  overflow: auto;
 }
 
 .DiaryPage .diary_content_wrapper p {

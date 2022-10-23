@@ -11,6 +11,7 @@ import MyButton from "./MyButton"
     //     navigate("/new")
     // }
 //}
+
 const sortOptionList = [
     { value: "latest", name: "최신순" },
     { value: "oldest", name: "오래된 순" },
@@ -79,7 +80,7 @@ const DiaryList = ({ diaryList }) => {
                 <div className="right_col">
                     <MyButton
                         type={'positive'}
-                        text={'새 일기쓰기'}
+                        text={'일기 작성하기'}
                         onClick={() => navigate("/new")}
                         //onClick={newDiary}
                     />
