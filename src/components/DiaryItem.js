@@ -35,7 +35,7 @@ const DiaryItem = ({ id, emotion, content, date }) => {
       </div>
       <div className="btn_wrapper">
 
-        <MyButton onClick={goEdit} text={"수정하기 끝"} type={"neutral"} />
+        <MyButton onClick={goEdit} text={"수정하기 끝내줘"} type={"neutral"} />
         <MyButton onClick={goEdit} text={"삭제하기 제발 끝"} type={"negative"} />
       </div>
     </div>
