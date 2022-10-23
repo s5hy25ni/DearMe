@@ -274,7 +274,7 @@ footer button {
 
   box-sizing: border-box;
   width: 100%;
-  min-height: 20rem;
+  height: 20vh;
   resize : none;
   overflow : auto;
 
@@ -403,7 +403,7 @@ footer button {
 
 .DiaryPage .diary_content_wrapper {
   width: 100%;
-  height: 20rem;
+  height: 25vh;
   background-color: #ececec;
   border-radius: 5px;
   word-break: keep-all;
