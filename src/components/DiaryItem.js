@@ -1,10 +1,11 @@
-import React from "react";
+import { React, useState, useRef, useContext, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import MyButton from "./MyButton";
+import { DiaryDispatchContext } from "./../App.js";
 
 const DiaryItem = ({ id, emotion, content, date }) => {
   const navigate = useNavigate();
-
+  const { onRemove } = useContext(DiaryDispatchContext);
   const env = process.env;
   env.PUBLIC_URL = env.PUBLIC_URL || "";
 
@@ -15,9 +16,17 @@ const DiaryItem = ({ id, emotion, content, date }) => {
   };
 
   const goEdit = () => {
-    navigate(`/edit/${id}`);
+    // if(strDate!=date){
+    // }
+      navigate(`/edit/${id}`);
   };
 
+  const delDiary = () => {
+    if (window.confirm("정말 삭제하시겠습니까?")) {
+      onRemove(id);
+      navigate("/", { replace: true });
+    }
+  }
   return (
     <div className="DiaryItem">
       <div
@@ -34,11 +43,11 @@ const DiaryItem = ({ id, emotion, content, date }) => {
         <div className="diary_content_preview">{content.slice(0, 25)}</div>
       </div>
       <div className="btn_wrapper">
-        <MyButton onClick={goEdit} text={"수정하기 끝내줘"} type={"neutral"} />
-        <MyButton onClick={goEdit} text={"삭제하기모르겠당!"} type={"negative"} />
+        <MyButton onClick={goEdit} text={"수정하기"} type={"neutral"} />
+        <MyButton onClick={delDiary} text={"삭제하기"} type={"negative"} />
       </div>
     </div>
   );
 };
 
-export default React.memo(DiaryItem);
+export default DiaryItem;
