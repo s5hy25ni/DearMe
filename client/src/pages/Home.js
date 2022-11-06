@@ -63,7 +63,7 @@ const Home = () => {
                 <MyButton text={"로그아웃"}/>
             </div>
             <div class="home_myPage">
-                <MyButton text={"마이페이지2"}/>
+                <MyButton text={"마이페이지"}/>
             </div>
 
             <MyHeader
