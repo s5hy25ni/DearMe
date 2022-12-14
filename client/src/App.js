@@ -7,6 +7,11 @@ import Home from "./pages/Home";
 import New from "./pages/New";
 import Edit from "./pages/Edit";
 import Diary from "./pages/Diary";
+import Login from "./pages/Login";
+import FindID from "./pages/FindID";
+import FindPW from "./pages/FindPW";
+import MyPage from "./pages/MyPage";
+import Agree from "./pages/Agree";
 
 const reducer = (state, action) => {
   let newState = [];
@@ -103,6 +108,11 @@ function App() {
               <Route path="/new" element={<New />} />
               <Route path="/edit/:id" element={<Edit />} />
               <Route path="/diary/:id" element={<Diary />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/findid" element={<FindID />} />
+              <Route path="/findpw" element={<FindPW />} />
+              <Route path="/mypage" element={<MyPage />} />
+              <Route path="/agree" element={<Agree />} />
             </Routes>
           </div>
         </BrowserRouter>

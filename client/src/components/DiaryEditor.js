@@ -2,7 +2,8 @@ import { useState, useRef, useContext, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { DiaryDispatchContext } from "./../App.js";
 
-import MyHeader from "./MyHeader";import MyFooter from "./MyFooter";
+import MyHeader from "./MyHeader";
+import MyFooter from "./MyFooter";
 import MyButton from "./MyButton";
 import EmotionItem from "./EmotionItem";
 
