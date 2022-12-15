@@ -188,20 +188,27 @@ footer button {
   outline : none;
 }
 
-.login_button {
-  margin-top : 15px;
-}
-
 .login_button button {
   font-family: 'Nanum Pen Script';
   font-size: 35px;
   width : 100%;
   height : 50px;
   border : none;
-  border-radius : 8px;
   cursor: pointer;
-  background-color : #fd565f;
   color : white;
+  background-color: transparent;
+}
+
+.login_button_yes {
+  margin-top : 30px;
+  border-radius : 8px;
+  background-color : #fd565f;
+}
+
+.login_button_no {
+  margin-top : 10px;
+  border-radius : 8px;
+  background-color : grey;
 }
 
 .login_footer {
@@ -237,12 +244,13 @@ footer button {
 /* MyPage */
 
 .mypage_wrap {
-  height : 840px;
+  height : 810px;
+  margin-top : 30px;
 }
 
 .mypage_box {
   height : 80px;
-  width : 500px;
+  width : 600px;
   margin : 0 auto;
   display : flex;
   justify-content : space-between;
@@ -311,7 +319,6 @@ footer button {
 }
 
 .agree_top {
-  margin-top : 10px;
   height : 50px;
 }
 
@@ -328,7 +335,7 @@ footer button {
 }
 
 .agree_middle {
-  height : 650px;
+  height : 600px;
 }
 
 .agree_box {
@@ -362,37 +369,117 @@ footer button {
   font-size : 18px;
 }
 
-.agree_bottom {
-  height : 100px;
+.agree_button {
+  width : 600px;
+  height : 120px;
+  margin : 0 auto;
+}
+
+/* join */
+
+.join_wrap {
+  height : 900px;
+  overflow : auto;
+}
+
+.join_wrap h4 {
+  text-align : center;
+  text-decoration : underline;
+  margin : 5px auto;
+  color : #fd565f;
+}
+
+.join_box {
+  height : 80px;
+  width : 600px;
+  margin : 0 auto;
+  display : flex;
+  justify-content : space-between;
+  padding : 5px;
+}
+
+.join_left {
+  width : 100%;
+}
+
+.join_title {
+  width : 100%;
+  height : 20px;
+  margin : 0 8px;
+}
+
+.join_title span {
+  font-size : 15px;
+  color : grey;
+  font-weight : lighter;
+}
+
+.join_content {
+  width : 100%;
+  height : 50px;
+  border : none;
+  border-radius : 8px;
+  background-color : rgb(240, 240, 240);
+  display: flex;
+  align-items: center;
+}
+
+.join_interested_box {
+  height : 130px;
+  width : 600px;
+  margin : 0 auto;
+  padding : 5px;
+}
+
+.join_interested {
+  width : 100%;
+  height : 80px;
+  border : none;
+  border-radius : 8px;
+  background-color : rgb(240, 240, 240);
+  padding : 10px;
+}
+
+.join_interested div {
+  width : 600px;
+  height : 30px;
   display : flex;
   justify-content : space-around;
 }
 
-.agree_disagree {
-  width : 300px;
-  height : 50px;
-  line-height : 50px;
-  border-radius : 8px;
-  background-color : grey;
-}
-
-.agree_agree {
-  width : 300px;
-  height : 50px;
-  line-height : 50px;
-  border-radius : 8px;
-  background-color : #fd565f;
-}
-
-.agree_bottom button {
-  font-family : 'Nanum Pen Script';
-  font-size : 30px;
-  color : white;
-  width : 100%;
-  height : 100%;
+.join_content input {
+  font-family: "Nanum Pen Script";
+  font-size: 20px;
+  width: 93%;
+  margin : 0 auto;
+  resize : none;
+  border: none;
   background-color : transparent;
+}
+
+.join_content input:focus {
+  outline : none;
+}
+
+.join_right {
+  width : 20%;
+}
+
+.join_button {
+  margin-top : 20px;
+  margin-left : 10px;
+}
+
+.join_button button {
+  font-family: 'Nanum Pen Script';
+  font-size: 20px;
+  width : 100%;
+  height : 50px;
   border : none;
-  cursor : pointer;
+  border-radius : 8px;
+  cursor: pointer;
+  background-color : #64c964;
+  color : white;
 }
 
 /* DiaryList */

@@ -16,6 +16,7 @@ const FindID = () => {
                         title={"전화번호"}
                         input={""}/>
                     <LoginButton text={"아이디 찾기"} />
+                    <LoginButton text={"취소"} type={"no"}/>
                     <div className="login_footer">
                     </div>
                 </div>

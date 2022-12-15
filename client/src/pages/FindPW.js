@@ -19,6 +19,7 @@ const FindPW = () => {
                         title={"전화번호"}
                         input={""}/>
                     <LoginButton text={"비밀번호 초기화"} />
+                    <LoginButton text={"취소"} type={"no"} />
                 </div>
             </div>
     );

@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import MyHeader from './../components/MyHeader';
-import MyButton from './../components/MyButton';
+import LoginButton from './../components/LoginButton'
 
 const MyPage = () => {
     const navigate = useNavigate();
@@ -10,12 +10,6 @@ const MyPage = () => {
         <div>
             <MyHeader
                 headText={"내 정보"}
-                leftChild={
-                    <MyButton text={"< 뒤로가기"} onClick={() => navigate(-1)} />
-                }
-                rightChild={
-                    <MyButton text={"저장하기"} onClick={() => navigate(-1)} type="negative"/>
-                }
             />
             <div className="mypage_wrap">
                 <div className="mypage_box">
@@ -69,6 +63,10 @@ const MyPage = () => {
                             <button>변경</button>
                         </div>
                     </div>
+                </div>
+                <div className="agree_button">
+                    <LoginButton text={"저장"} />
+                    <LoginButton text={"취소"} type={"no"} />
                 </div>
             </div>
         </div>

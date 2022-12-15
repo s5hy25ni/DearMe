@@ -12,6 +12,7 @@ import FindID from "./pages/FindID";
 import FindPW from "./pages/FindPW";
 import MyPage from "./pages/MyPage";
 import Agree from "./pages/Agree";
+import Join from "./pages/Join";
 
 const reducer = (state, action) => {
   let newState = [];
@@ -113,6 +114,7 @@ function App() {
               <Route path="/findpw" element={<FindPW />} />
               <Route path="/mypage" element={<MyPage />} />
               <Route path="/agree" element={<Agree />} />
+              <Route path="/join" element={<Join />} />
             </Routes>
           </div>
         </BrowserRouter>
