@@ -47,7 +47,6 @@ const Diary = () => {
     return (
       <div className="DiaryPage">
         <MyHeader
-          // headText={`${getStringDate(new Date(data.date))} 기록`}
           headText={`${getStringDate(new Date(data.date)).split("-")[0]}년 ${getStringDate(new Date(data.date)).split("-")[1]}월 ${getStringDate(new Date(data.date)).split("-")[2]}일의  기록`}
           leftChild={
             <button onClick={() => navigate(-1)}><img className="img_button" src="../../assets/back.png" /></button>
@@ -93,6 +92,7 @@ const Diary = () => {
       </div>
     );
   }
+  
 };
 
 export default Diary;

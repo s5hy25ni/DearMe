@@ -57,8 +57,8 @@ const Home = () => {
 
     return (
         <div>
-            <h1>연결 성공!</h1>
-            <h1>{message}</h1>
+            {/* <h1>연결 성공!</h1>
+            <h1>{message}</h1> */}
             <div class="home_logout">
                 <MyButton text={"로그아웃"}/>
             </div>

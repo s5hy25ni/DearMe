@@ -4,14 +4,6 @@ import DiaryItem from "./DiaryItem"
 
 import MyButton from "./MyButton"
 
-//const newDiary = () => {
-    // if (동일날짜 일기 존재시){
-    //     window.confirm("이미 작성하신 일기가 있습니다.")
-    // } else {
-    //     navigate("/new")
-    // }
-//}
-
 const sortOptionList = [
     { value: "latest", name: "최신순" },
     { value: "oldest", name: "오래된 순" },
@@ -60,6 +52,14 @@ const DiaryList = ({ diaryList }) => {
         const filteredList = filter === 'all' ? copyList : copyList.filter((it) => filterCallback(it));
         const sortedList = filteredList.sort(compare);
         return sortedList;
+
+        // const newDiary = () => {
+        //     if (동일날짜 일기 존재시){
+        //         window.confirm("이미 작성하신 일기가 있습니다.")
+        //     } else {
+        //         navigate("/new")
+        //     }
+        // }
     };
 
     return (
@@ -77,14 +77,15 @@ const DiaryList = ({ diaryList }) => {
                         optionList={filterOptionList}
                     />
                 </div>
+                
                 <div className="right_col">
                     <MyButton
                         type={'positive'}
                         text={'일기 작성하기'}
                         onClick={() => navigate("/new")}
-                        //onClick={newDiary}
                     />
                 </div>
+                
             </div>
             {getProcessedDiaryList().map((it) => (
                 <DiaryItem key={it.id} {...it} />

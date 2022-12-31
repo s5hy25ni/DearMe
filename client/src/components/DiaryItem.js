@@ -2,23 +2,34 @@ import { React, useState, useRef, useContext, useEffect, useCallback } from "rea
 import { useNavigate } from "react-router-dom";
 import MyButton from "./MyButton";
 import { DiaryDispatchContext } from "./../App.js";
+import { getStringDate } from "../util/date";
 
 const DiaryItem = ({ id, emotion, content, date }) => {
   const navigate = useNavigate();
   const { onRemove } = useContext(DiaryDispatchContext);
+  const [data, setData] = useState();
   const env = process.env;
   env.PUBLIC_URL = env.PUBLIC_URL || "";
-
-  const strDate = new Date(parseInt(date)).toLocaleDateString();
-
+  
   const goDetail = () => {
     navigate(`/diary/${id}`);
   };
 
+  //작성일
+  const strDate = new Date(parseInt(date)).toLocaleDateString();
+  //현재날짜
+  const today = new Date().toLocaleDateString();
+
+
   const goEdit = () => {
-    // if(strDate!=date){
-    // }
+    if (strDate == today) {
+      //작성일 == 수정일 수정페이지로 이동
       navigate(`/edit/${id}`);
+    } else if (strDate != today) {
+      //작성일 =! 수정일 팝업
+      window.confirm("지난 일기는 수정할 수 없습니다.");
+      navigate("/", { replace: true });
+    } 
   };
 
   const delDiary = () => {
@@ -40,6 +51,7 @@ const DiaryItem = ({ id, emotion, content, date }) => {
       </div>
       <div onClick={goDetail} className="info_wrapper">
         <div className="diary_date">{strDate}</div>
+        <div> 작성일 : {strDate}</div>
         <div className="diary_content_preview">{content.slice(0, 25)}</div>
       </div>
       <div className="btn_wrapper">
