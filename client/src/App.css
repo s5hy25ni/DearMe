@@ -129,6 +129,359 @@ footer button {
   font-family: "Nanum Pen Script";
 }
 
+/* Login */
+
+.login_wrap {
+  height : 920px;
+  display : flex;
+}
+
+.login_box {
+  margin : auto;
+  padding : 50px;
+  width : 400px;
+  max-height : 800px;
+}
+
+.login_header {
+  border-bottom : none;
+}
+
+.login_logo {
+  width: 100%;
+  font-size: 50px;
+  color: #fd565f;
+  justify-content: center;
+  text-shadow: 4px 2px 2px pink;
+}
+
+.login_input_box {
+  margin-bottom : 10px;
+}
+
+.login_input_title {
+  width : 100%;
+  margin : 0 8px;
+  color: #fd565f;
+}
+
+.login_input_content {
+  width : 100%;
+  height : 50px;
+  border-radius : 8px;
+  background-color : rgb(240, 240, 240);
+  display: flex;
+  align-items: center;
+}
+
+.login_input_content input {
+  font-family: "Nanum Pen Script";
+  font-size: 20px;
+  width: 93%;
+  margin : 0 auto;
+  resize : none;
+  border: none;
+  background-color : transparent;
+}
+
+.login_input_content input:focus {
+  outline : none;
+}
+
+.login_button button {
+  font-family: 'Nanum Pen Script';
+  font-size: 35px;
+  width : 100%;
+  height : 50px;
+  border : none;
+  cursor: pointer;
+  color : white;
+  background-color: transparent;
+}
+
+.login_button_yes {
+  margin-top : 30px;
+  border-radius : 8px;
+  background-color : #fd565f;
+}
+
+.login_button_no {
+  margin-top : 10px;
+  border-radius : 8px;
+  background-color : grey;
+}
+
+.login_footer {
+  display : flex;
+  justify-content : space-between;
+  margin-top : 5px;
+  height : 20px;
+}
+
+.login_footer_left label{
+  cursor : pointer;
+}
+
+.login_footer_left input{
+  cursor : pointer;
+}
+
+.login_footer_right {
+  width : 50%;
+  display : flex;
+  justify-content : space-around;
+}
+
+.login_footer_right button {
+  font-family: 'Nanum Pen Script';
+  font-size : 15px;
+  background-color : transparent;
+  border : none;
+  text-decoration : underline;
+  cursor : pointer;
+}
+
+/* MyPage */
+
+.mypage_wrap {
+  height : 810px;
+  margin-top : 30px;
+}
+
+.mypage_box {
+  height : 80px;
+  width : 600px;
+  margin : 0 auto;
+  display : flex;
+  justify-content : space-between;
+  padding : 10px;
+}
+
+.mypage_left {
+  width : 100%;
+}
+
+.mypage_title {
+  width : 100%;
+  height : 20px;
+  margin : 0 8px;
+}
+
+.mypage_content {
+  width : 100%;
+  height : 50px;
+  border : none;
+  border-radius : 8px;
+  background-color : rgb(240, 240, 240);
+  display: flex;
+  align-items: center;
+}
+
+.mypage_content input {
+  font-family: "Nanum Pen Script";
+  font-size: 20px;
+  width: 93%;
+  margin : 0 auto;
+  resize : none;
+  border: none;
+  background-color : transparent;
+}
+
+.mypage_content input:focus {
+  outline : none;
+}
+
+.mypage_right {
+  width : 20%;
+}
+
+.mypage_button {
+  margin-top : 20px;
+  margin-left : 10px;
+}
+
+.mypage_button button {
+  font-family: 'Nanum Pen Script';
+  font-size: 20px;
+  width : 100%;
+  height : 50px;
+  border : none;
+  border-radius : 8px;
+  cursor: pointer;
+  background-color : #64c964;
+  color : white;
+}
+
+/* Agree */
+
+.agree_wrap {
+  height : 810px;
+}
+
+.agree_top {
+  height : 50px;
+}
+
+.agree_top input {
+  margin : 10px;
+  cursor : pointer;
+}
+.agree_top label {
+  font-size : 25px;
+  line-height : 50px;
+  vertical-align : center;
+  cursor : pointer;
+  text-decoration: underline;
+}
+
+.agree_middle {
+  height : 600px;
+}
+
+.agree_box {
+  width : 600px;
+  height : 190px;
+  margin : 15px auto;
+  padding : 0 10px;
+}
+
+.agree_title input {
+  margin : 10px;
+  cursor : pointer;
+}
+
+.agree_title label {
+  font-size : 23px;
+  cursor : pointer;
+}
+
+.agree_title span {
+  font-size : 18px;
+  color : #fd565f;
+}
+
+.agree_content {
+  border-radius : 8px;
+  background-color: #ececec;
+  height : 130px;
+  overflow : auto;
+  padding : 10px;
+  font-size : 18px;
+}
+
+.agree_button {
+  width : 600px;
+  height : 120px;
+  margin : 0 auto;
+}
+
+/* join */
+
+.join_wrap {
+  height : 900px;
+  overflow : auto;
+}
+
+.join_wrap h4 {
+  text-align : center;
+  text-decoration : underline;
+  margin : 5px auto;
+  color : #fd565f;
+}
+
+.join_box {
+  height : 80px;
+  width : 600px;
+  margin : 0 auto;
+  display : flex;
+  justify-content : space-between;
+  padding : 5px;
+}
+
+.join_left {
+  width : 100%;
+}
+
+.join_title {
+  width : 100%;
+  height : 20px;
+  margin : 0 8px;
+}
+
+.join_title span {
+  font-size : 15px;
+  color : grey;
+  font-weight : lighter;
+}
+
+.join_content {
+  width : 100%;
+  height : 50px;
+  border : none;
+  border-radius : 8px;
+  background-color : rgb(240, 240, 240);
+  display: flex;
+  align-items: center;
+}
+
+.join_interested_box {
+  height : 130px;
+  width : 600px;
+  margin : 0 auto;
+  padding : 5px;
+}
+
+.join_interested {
+  width : 100%;
+  height : 80px;
+  border : none;
+  border-radius : 8px;
+  background-color : rgb(240, 240, 240);
+  padding : 10px;
+}
+
+.join_interested div {
+  width : 600px;
+  height : 30px;
+  display : flex;
+  justify-content : space-around;
+}
+
+.join_content input {
+  font-family: "Nanum Pen Script";
+  font-size: 20px;
+  width: 93%;
+  margin : 0 auto;
+  resize : none;
+  border: none;
+  background-color : transparent;
+}
+
+.join_content input:focus {
+  outline : none;
+}
+
+.join_right {
+  width : 20%;
+}
+
+.join_button {
+  margin-top : 20px;
+  margin-left : 10px;
+}
+
+.join_button button {
+  font-family: 'Nanum Pen Script';
+  font-size: 20px;
+  width : 100%;
+  height : 50px;
+  border : none;
+  border-radius : 8px;
+  cursor: pointer;
+  background-color : #64c964;
+  color : white;
+}
+
 /* DiaryList */
 
 .DiaryList .menu_wrapper {
@@ -276,11 +629,13 @@ footer button {
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 8px;
+  border-radius : 8px;
   background-color: #ececec;
 }
 
 ::-webkit-scrollbar-thumb {
+  border-radius : 8px;
   background-color: grey;
 
 }
