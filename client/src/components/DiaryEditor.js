@@ -24,7 +24,7 @@ const DiaryEditor = ({ isEdit, originData }) => {
     setEmotion(emotion);
   }, []);
   const navigate = useNavigate();
-
+  
   const handleSubmit = () => {
     if (content.length < 1) {
       contentRef.current.focus();

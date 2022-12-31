@@ -68,6 +68,7 @@ const Home = () => {
 
             <MyHeader
                 headText={headText}
+                //headText = {{headText}&& <MyButton onClick={decreaseMonth}/>}
                 leftChild={<MyButton text={"<"} onClick={decreaseMonth} />}
                 rightChild={<MyButton text={">"} onClick={increaseMonth} />}
             />

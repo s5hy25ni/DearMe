@@ -7,14 +7,13 @@ import { getStringDate } from "../util/date";
 const DiaryItem = ({ id, emotion, content, date }) => {
   const navigate = useNavigate();
   const { onRemove } = useContext(DiaryDispatchContext);
-  const [data, setData] = useState();
   const env = process.env;
   env.PUBLIC_URL = env.PUBLIC_URL || "";
   
   const goDetail = () => {
     navigate(`/diary/${id}`);
   };
-
+  
   //작성일
   const strDate = new Date(parseInt(date)).toLocaleDateString();
   //현재날짜
@@ -37,7 +36,8 @@ const DiaryItem = ({ id, emotion, content, date }) => {
       onRemove(id);
       navigate("/", { replace: true });
     }
-  }
+  };
+  
   return (
     <div className="DiaryItem">
       <div
@@ -51,7 +51,7 @@ const DiaryItem = ({ id, emotion, content, date }) => {
       </div>
       <div onClick={goDetail} className="info_wrapper">
         <div className="diary_date">{strDate}</div>
-        <div> 작성일 : {strDate}</div>
+
         <div className="diary_content_preview">{content.slice(0, 25)}</div>
       </div>
       <div className="btn_wrapper">

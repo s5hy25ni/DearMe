@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { useNavigate } from "react-router-dom"
-import DiaryItem from "./DiaryItem"
+import DiaryItem from "./DiaryItem.js"
 
 import MyButton from "./MyButton"
 
@@ -31,6 +31,22 @@ const DiaryList = ({ diaryList }) => {
     const [sortType, setSortType] = useState("latest");
     const [filter, setFilter] = useState("all");
 
+    const diaryCheck = (item) => {
+        // 현재날짜
+        const today = new Date().toLocaleDateString();
+        
+        /*오늘 날짜로 일기가 존재하는지 확인 방법 어려움... */
+        // 마지막작성일
+        const lastDay = item.nativeEvent.path[3].getElementsByClassName('diary_date')[0].innerText;
+        
+        //마지막 작성일과 현재날짜 동일시 alert발동
+        if (lastDay == today){
+                alert("이미 작성하신 일기가 있습니다.")
+          } else {
+                navigate("/new")
+          }
+    };
+
     const getProcessedDiaryList = () => {
 
         const filterCallback = (item) => {
@@ -48,18 +64,13 @@ const DiaryList = ({ diaryList }) => {
                 return parseInt(a.date) - parseInt(b.date);
             }
         }
+        
         const copyList = JSON.parse(JSON.stringify(diaryList));
         const filteredList = filter === 'all' ? copyList : copyList.filter((it) => filterCallback(it));
         const sortedList = filteredList.sort(compare);
         return sortedList;
 
-        // const newDiary = () => {
-        //     if (동일날짜 일기 존재시){
-        //         window.confirm("이미 작성하신 일기가 있습니다.")
-        //     } else {
-        //         navigate("/new")
-        //     }
-        // }
+        
     };
 
     return (
@@ -82,7 +93,8 @@ const DiaryList = ({ diaryList }) => {
                     <MyButton
                         type={'positive'}
                         text={'일기 작성하기'}
-                        onClick={() => navigate("/new")}
+                        //onClick={() => navigate("/new")}
+                        onClick={diaryCheck}
                     />
                 </div>
                 
