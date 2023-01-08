@@ -16,7 +16,7 @@ const Login = () => {
                         title={"비밀번호"}
                         input={""}
                         type={"password"} />
-                    <LoginButton text={"로그인"} />
+                    <LoginButton text={"로그인"}/>
                     <div className="login_footer">
                         <div className="login_footer_left">
                             <label>

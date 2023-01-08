@@ -2,8 +2,21 @@ import { useContext, useEffect, useState } from "react";
 
 import LoginHeader from './../components/LoginHeader'
 import LoginButton from './../components/LoginButton'
+import axios from "axios";
 
 const FindID = () => {
+    const onJoin = (event) => {
+        event.preventDefault();
+        axios.post(`http://localhost:4000/join`, {
+            headers : {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            id : 'so96hyun',
+            state : 'join',
+        })
+        alert("ok")
+    }
+
     return (
         <div className="join_wrap">
             <LoginHeader/>
@@ -75,7 +88,7 @@ const FindID = () => {
                 </div>
             </div>
             <div className="agree_button">
-                <LoginButton text={"저장"} />
+                <LoginButton text={"저장"} onClick={onJoin}/>
                 <LoginButton text={"취소"} type={"no"} />
             </div>
         </div>

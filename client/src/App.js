@@ -3,6 +3,8 @@ import React, { useEffect, useReducer, useRef } from "react";
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
+import axios from 'axios';
+
 import Home from "./pages/Home";
 import New from "./pages/New";
 import Edit from "./pages/Edit";
@@ -48,6 +50,10 @@ export const DiaryDispatchContext = React.createContext();
 function App() {
   const [data, dispatch] = useReducer(reducer, []);
 
+  useEffect(() => {
+    axios.get('/api/test').then(res => console.log(res)).catch()
+  })
+  
   useEffect(() => {
     const localData = localStorage.getItem("diary");
     if (localData) {
