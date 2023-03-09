@@ -37,14 +37,20 @@ const DiaryList = ({ diaryList }) => {
         
         /*오늘 날짜로 일기가 존재하는지 확인 방법 어려움... */
         // 마지막작성일
-        const lastDay = item.nativeEvent.path[3].getElementsByClassName('diary_date')[0].innerText;
+        console.log(item);
+        // const lastDay = item.nativeEvent.path[3].getElementsByClassName('diary_date')[0].innerText;
+        // console.log(item.nativeEvent.view.localStorage.diary);
+        // console.log(item.nativeEvent.path[3]);
+        // console.log(item.nativeEvent.path[3].getElementsByClassName('diary_date'));
+        // console.log(item.nativeEvent.path[3].getElementsByClassName('diary_date')[0]);
+        // console.log(item.nativeEvent.path[3].getElementsByClassName('diary_date')[0].innerText);
         
         //마지막 작성일과 현재날짜 동일시 alert발동
-        if (lastDay == today){
-                alert("이미 작성하신 일기가 있습니다.")
-          } else {
+        // if (lastDay == today){
+        //         alert("이미 작성하신 일기가 있습니다.")
+        //   } else {
                 navigate("/new")
-          }
+        //   }
     };
 
     const getProcessedDiaryList = () => {
