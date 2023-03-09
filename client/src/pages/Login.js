@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import LoginHeader from './../components/LoginHeader'
 import LoginInputBox from './../components/LoginInputBox'
@@ -16,7 +17,9 @@ const Login = () => {
                         title={"비밀번호"}
                         input={""}
                         type={"password"} />
-                    <LoginButton text={"로그인"}/>
+                    <Link to="/">
+                        <LoginButton text={"로그인"}/>
+                    </Link>
                     <div className="login_footer">
                         <div className="login_footer_left">
                             <label>
@@ -24,9 +27,15 @@ const Login = () => {
                             </label>
                         </div>
                         <div className="login_footer_right">
-                            <button>아이디 찾기</button>
-                            <button>비밀번호 찾기</button>
-                            <button>회원가입</button>
+                            <Link to="/findid">
+                                <button>아이디 찾기</button>
+                            </Link>
+                            <Link to="/findpw">
+                                <button>비밀번호 찾기</button>
+                            </Link>
+                            <Link to="/join">
+                                <button>회원가입</button>
+                            </Link>
                         </div>
                     </div>
                 </div>

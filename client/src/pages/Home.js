@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { DiaryStateContext } from "../App";
+import { Link } from "react-router-dom";
 
 import MyHeader from './../components/MyHeader'
 import MyButton from './../components/MyButton'
@@ -58,10 +59,14 @@ const Home = () => {
     return (
         <div>
             <div class="home_logout">
-                <MyButton text={"로그아웃"}/>
+                <Link to="/login">
+                    <MyButton text={"로그아웃"}/>
+                </Link>
             </div>
             <div class="home_myPage">
-                <MyButton text={"마이페이지"}/>
+                <Link to="/mypage">
+                    <MyButton text={"마이페이지"}/>
+                </Link>
             </div>
 
             <MyHeader

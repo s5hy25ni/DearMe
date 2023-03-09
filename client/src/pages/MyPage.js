@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 import MyHeader from './../components/MyHeader';
 import LoginButton from './../components/LoginButton'
@@ -65,8 +65,10 @@ const MyPage = () => {
                     </div>
                 </div>
                 <div className="agree_button">
-                    <LoginButton text={"저장"} />
-                    <LoginButton text={"취소"} type={"no"} />
+                    <Link to="/">
+                        <LoginButton text={"저장"} />
+                        <LoginButton text={"취소"} type={"no"} />
+                    </Link>
                 </div>
             </div>
         </div>

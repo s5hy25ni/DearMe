@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import LoginHeader from './../components/LoginHeader'
 import LoginInputBox from './../components/LoginInputBox'
@@ -19,7 +20,9 @@ const FindPW = () => {
                         title={"전화번호"}
                         input={""}/>
                     <LoginButton text={"비밀번호 초기화"} />
-                    <LoginButton text={"취소"} type={"no"} />
+                    <Link to="/login">
+                        <LoginButton text={"취소"} type={"no"} />
+                    </Link>
                 </div>
             </div>
     );

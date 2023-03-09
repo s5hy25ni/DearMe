@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import LoginHeader from './../components/LoginHeader'
 import LoginInputBox from './../components/LoginInputBox'
@@ -16,7 +17,9 @@ const FindID = () => {
                         title={"전화번호"}
                         input={""}/>
                     <LoginButton text={"아이디 찾기"} />
-                    <LoginButton text={"취소"} type={"no"}/>
+                    <Link to="/login">
+                        <LoginButton text={"취소"} type={"no"}/>
+                    </Link>
                     <div className="login_footer">
                     </div>
                 </div>
