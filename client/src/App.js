@@ -52,9 +52,9 @@ export const DiaryDispatchContext = React.createContext();
 function App() {
   const [data, dispatch] = useReducer(reducer, []);
 
-  useEffect(() => {
-    axios.get('/api/test').then(res => console.log(res)).catch()
-  })
+  // useEffect(() => {
+  //   axios.get('/api/test').then(res => console.log(res)).catch()
+  // })
   
   useEffect(() => {
     const localData = localStorage.getItem("diary");
