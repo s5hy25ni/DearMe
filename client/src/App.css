@@ -862,3 +862,21 @@ footer button {
   border-radius: 5px;
   cursor: pointer;
 }
+
+/* recommendVideo */
+.collection {
+  float: left;
+  cursor: pointer;
+  border: 1px solid #fdb1b4;
+  border-radius: 5px;
+  margin: 10px 5%;
+  padding: 10px;
+  padding-right: 5%;
+  padding-left: 5%;
+  font-size: 18px;
+}
+
+.collection.total {
+  background-color: #fd565f;
+  color: white;
+}

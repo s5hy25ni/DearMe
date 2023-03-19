@@ -19,7 +19,6 @@ const DiaryItem = ({ id, emotion, content, date }) => {
   //현재날짜
   const today = new Date().toLocaleDateString();
 
-
   const goEdit = () => {
     if (strDate == today) {
       //작성일 == 수정일 수정페이지로 이동
