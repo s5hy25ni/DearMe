@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 
-import LoginHeader from '../components/CheckHeader'
+import LoginHeader from '../components/CheckHeader';
 
 const CheckDepression = () => {
   return (
