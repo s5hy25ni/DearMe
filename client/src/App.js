@@ -17,7 +17,6 @@ import Agree from "./pages/Agree";
 import Join from "./pages/Join";
 import CheckDepression from "./pages/CheckDepression";
 import SelectVideo from "./pages/SelectVideo.js";
-import { Component } from "react/cjs/react.production.min";
 
 
 const reducer = (state, action) => {
