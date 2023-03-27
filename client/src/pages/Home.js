@@ -56,11 +56,16 @@ const Home = () => {
         setCurDate(new Date(curDate.getFullYear(), curDate.getMonth() - 1, curDate.getDate()));
     }
 
+    const onLogoutSubmitHandler = (e) => {
+        localStorage.clear();
+        sessionStorage.clear();
+    }
+
     return (
         <div>
             <div class="home_logout">
                 <Link to="/login">
-                    <MyButton text={"로그아웃"}/>
+                    <MyButton text={"로그아웃"} onClick={onLogoutSubmitHandler}/>
                 </Link>
             </div>
             <div class="home_myPage">

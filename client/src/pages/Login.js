@@ -1,29 +1,87 @@
 import { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import LoginHeader from './../components/LoginHeader'
 import LoginInputBox from './../components/LoginInputBox'
 import LoginButton from './../components/LoginButton'
+import axios from "axios";
 
 const Login = () => {
+    const navigate = useNavigate();
+
+    const [ loginID, setLoginID ] = useState("");
+    const [ loginPW, setLoginPW ] = useState("");
+
+    const onLoginIDHandler = (e) => {
+        setLoginID(e.currentTarget.value);
+    };
+
+    const onLoginPWHandler = (e) => {
+        setLoginPW(e.currentTarget.value);
+    };
+
+    const onLoginSubmitHandler = (e) => {
+        if(loginID=="" || loginPW=="") {
+            alert("아이디, 비밀번호를 입력하세요.")
+        }
+        else{
+            postLoginForm(loginID, loginPW);
+        }
+    }
+
+    const postLoginForm = async(loginID, loginPW) => {
+        await axios.post(`http://localhost:4000/login`, {
+            headers : {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            state : 'login',
+            id : loginID,
+            pw : loginPW,
+        })
+        .then((res)=> {
+            if(res.data.message === "loginSuccess") {
+                if(document.getElementsByName("keepLogin")[0].value==="keep"){
+                    localStorage.setItem('id', loginID)
+                    localStorage.setItem('isLogin', 'true')
+                }
+                else{
+                    sessionStorage.setItem('id', loginID)
+                    sessionStorage.setItem('isLogin', 'true')
+                }
+                navigate("/");
+            }
+            else if(res.data.message === "loginFalse") {
+                alert("아이디, 비밀번호를 확인하세요.")
+            }
+            else {
+                console.log("login res error")
+            }
+        })
+        .catch((error) => {
+            console.log("login post error : "+error)
+        })
+    }
+
     return (
             <div className="login_wrap">
                 <div className="login_box">
                     <LoginHeader/>
                     <LoginInputBox 
                         title={"아이디"}
-                        input={""}/>
+                        input={""}
+                        onChange={(onLoginIDHandler)} />
                     <LoginInputBox
                         title={"비밀번호"}
                         input={""}
-                        type={"password"} />
-                    <Link to="/">
-                        <LoginButton text={"로그인"}/>
-                    </Link>
+                        type={"password"} 
+                        onChange={(onLoginPWHandler)} />
+                    <LoginButton
+                    text={"로그인"}
+                    onClick={onLoginSubmitHandler}/>
                     <div className="login_footer">
                         <div className="login_footer_left">
                             <label>
-                                <input type="checkbox"/>로그인 상태 유지
+                                <input type="checkbox" name="keepLogin" value="keep"/>로그인 상태 유지
                             </label>
                         </div>
                         <div className="login_footer_right">

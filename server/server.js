@@ -29,7 +29,7 @@ app.use(express.static(__dirname + './routes'));
 // var findpw = require('./routes/findpw');
 // var home = require('./routes/home')
 var join = require('./routes/join');
-// var login = require('./routes/login')
+var login = require('./routes/login')
 // var mypage = require('./routes/mypage');
 // var newdiary = require('./routes/newdiary');
 
@@ -40,7 +40,7 @@ var join = require('./routes/join');
 // app.use('/findpw', findpw);
 // app.use('/', home);
 app.use('/join', join);
-// app.use('/login', login);
+app.use('/login', login);
 // app.use('/mypage', mypage);
 // app.use('/newdiary', newdiary);
 

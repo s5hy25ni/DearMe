@@ -1,7 +1,6 @@
 import { React, useState } from "react";
 
-const LoginInputBox = ({ title, type }) => {
-  const [input, setInput] = useState("");
+const LoginInputBox = ({ title, type, id, onChange }) => {
 
   return (
     <div className="login_input_box">
@@ -9,8 +8,8 @@ const LoginInputBox = ({ title, type }) => {
         <div className="login_input_content">
           <input
             type={type}
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
+            id={id}
+            onChange={onChange}
           />
         </div>
     </div>
