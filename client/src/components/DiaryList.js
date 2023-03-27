@@ -1,6 +1,8 @@
 import React, { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import DiaryItem from "./DiaryItem.js"
+import { DiaryDispatchContext } from "./../App.js";
+import { getStringDate } from "../util/date";
 
 import MyButton from "./MyButton"
 
@@ -26,7 +28,8 @@ const ControlMenu = React.memo(({ value, onChange, optionList }) => {
 });
 
 
-const DiaryList = ({ diaryList }) => {
+
+const DiaryList = ({diaryList}) => {
     const navigate = useNavigate();
     const [sortType, setSortType] = useState("latest");
     const [filter, setFilter] = useState("all");
@@ -35,22 +38,21 @@ const DiaryList = ({ diaryList }) => {
         // 현재날짜
         const today = new Date().toLocaleDateString();
         
-        /*오늘 날짜로 일기가 존재하는지 확인 방법 어려움... */
-        // 마지막작성일
-        console.log(item);
-        // const lastDay = item.nativeEvent.path[3].getElementsByClassName('diary_date')[0].innerText;
-        // console.log(item.nativeEvent.view.localStorage.diary);
-        // console.log(item.nativeEvent.path[3]);
-        // console.log(item.nativeEvent.path[3].getElementsByClassName('diary_date'));
-        // console.log(item.nativeEvent.path[3].getElementsByClassName('diary_date')[0]);
-        // console.log(item.nativeEvent.path[3].getElementsByClassName('diary_date')[0].innerText);
-        
-        //마지막 작성일과 현재날짜 동일시 alert발동
-        // if (lastDay == today){
-        //         alert("이미 작성하신 일기가 있습니다.")
-        //   } else {
-                navigate("/new")
-        //   }
+        if (today) { //해당 월에 첫 글이 아니면 비교
+            // 마지막작성일
+            const strDate = document.getElementsByClassName('diary_date')[0].innerText;
+            // 마지막 작성일과 현재날짜 동일시 alert발동
+            if (strDate == today) {
+                console.log("1");
+                    alert("이미 작성하신 일기가 있습니다.")
+              } else { //당일 작성글 없으면 글쓰기페이지이동
+                console.log("2");
+                    navigate("/new")
+              }
+        } else { // 해당 월에 첫 글 작성시 비교대상X
+            navigate("/new");
+            console.log("3");
+        }
     };
 
     const getProcessedDiaryList = () => {
@@ -111,8 +113,8 @@ const DiaryList = ({ diaryList }) => {
     )
 }
 
+
 DiaryList.defaultProps = {
     diaryList: [],
 }
-
 export default DiaryList;
