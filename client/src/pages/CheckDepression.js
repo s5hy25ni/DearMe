@@ -1,8 +1,12 @@
-import { useContext, useEffect, useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 import LoginHeader from '../components/CheckHeader'
 
 const CheckDepression = () => {
+  const navigate = useNavigate();
+  if(localStorage.getItem('isLogin') !=='true' && sessionStorage.getItem('isLogin') !=='true') {
+      navigate("/login");
+  }
+
   return (
     <div className="chk_app">
       <div className="check_wrap">

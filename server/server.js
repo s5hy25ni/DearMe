@@ -30,7 +30,7 @@ app.use(express.static(__dirname + './routes'));
 // var home = require('./routes/home')
 var join = require('./routes/join');
 var login = require('./routes/login')
-// var mypage = require('./routes/mypage');
+var mypage = require('./routes/mypage');
 // var newdiary = require('./routes/newdiary');
 
 // app.use('/agree', agree);
@@ -41,7 +41,7 @@ var login = require('./routes/login')
 // app.use('/', home);
 app.use('/join', join);
 app.use('/login', login);
-// app.use('/mypage', mypage);
+app.use('/mypage', mypage);
 // app.use('/newdiary', newdiary);
 
 // http://localhost:4000/ 으로 접속 시 응답 메세지

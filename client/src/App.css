@@ -199,7 +199,7 @@ footer button {
 }
 
 .login_button_yes {
-  margin-top : 30px;
+  margin-top : 10px;
   border-radius : 8px;
   background-color : #fd565f;
 }
@@ -243,14 +243,11 @@ footer button {
 /* MyPage */
 
 .mypage_wrap {
-  height : 85vh;
-  margin-top : 20px;
-
-  overflow-y : scroll;
+  height : 90vh;
 }
 
 .mypage_box {
-  height : 80px;
+  height : 10%;
   width : 600px;
   margin : 0 auto;
   display : flex;
@@ -265,7 +262,7 @@ footer button {
 .mypage_title {
   width : 100%;
   height : 20px;
-  margin : 0 8px;
+  margin : 0 5px;
 }
 
 .mypage_content {
@@ -316,11 +313,11 @@ footer button {
 /* Agree */
 
 .agree_wrap {
-  height : 810px;
+  height : 80;
 }
 
 .agree_top {
-  height : 50px;
+  height : 10%;
 }
 
 .agree_top input {
@@ -336,13 +333,14 @@ footer button {
 }
 
 .agree_middle {
-  height : 600px;
+  height : 70%;
+  margin-bottom : 10px;
 }
 
 .agree_box {
   width : 600px;
-  height : 190px;
-  margin : 15px auto;
+  height : 30%;
+  margin : 10px auto;
   padding : 0 10px;
 }
 
@@ -364,7 +362,7 @@ footer button {
 .agree_content {
   border-radius : 8px;
   background-color: #ececec;
-  height : 130px;
+  height : 80px;
   overflow : auto;
   padding : 10px;
   font-size : 18px;
@@ -372,14 +370,14 @@ footer button {
 
 .agree_button {
   width : 600px;
-  height : 120px;
+  height : 20%;
   margin : 0 auto;
 }
 
 /* join */
 
 .join_wrap {
-  height : 85vh;
+  height : 80%;
   overflow-y : auto;
   overflow-x : hidden;
 }
@@ -742,7 +740,6 @@ footer button {
 
 .home_myPage, .home_logout{
   display: flex;
-  margin-bottom: 10px;
   flex-direction: row-reverse;
 } 
 

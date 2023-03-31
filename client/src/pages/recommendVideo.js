@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import CheckHeader from '../components/CheckHeader';
 
 // function handleClick(event) {
@@ -7,7 +7,12 @@ import CheckHeader from '../components/CheckHeader';
 //     });
 //     event.target.classList.add("click");
 // }
-const recommendVideo = () => {
+const RecommendVideo = () => {
+    const navigate = useNavigate();
+    if(localStorage.getItem('isLogin') !=='true' && sessionStorage.getItem('isLogin') !=='true') {
+        navigate("/login");
+    }
+
     var collection = document.querySelectorAll(".collection");
     var collList = [];
 
@@ -80,4 +85,4 @@ const recommendVideo = () => {
     );
 };
 
-export default recommendVideo;
+export default RecommendVideo;

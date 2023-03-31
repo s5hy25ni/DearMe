@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import LoginHeader from './../components/LoginHeader'
@@ -6,14 +6,18 @@ import LoginButton from './../components/LoginButton'
 import axios from "axios";
 
 const Join = () => {
-    var idOverlap = true;
     const navigate = useNavigate();
+    if(localStorage.getItem('isLogin') === 'true' || sessionStorage.getItem('isLogin') === 'true') {
+        navigate("/");
+    }
 
     const [ joinID, setJoinID ] = useState("");
     const [ joinPW, setJoinPW ] = useState("");
     const [ joinPWCon, setJoinPWCon ] = useState("");
     const [ joinName, setJoinName ] = useState("");
     const [ joinPN, setJoinPN ] = useState("");
+
+    var idOverlap = true;
 
     const onJoinIDHandler = (e) => {
         idOverlap = true;
@@ -38,7 +42,7 @@ const Join = () => {
 
     const onOverlapConHandler = (e) => {
         e.preventDefault();
-        if(joinID=="") {
+        if(joinID==="") {
             alert("사용하실 아이디를 입력하세요.")
         }
         else {postID(joinID);}
@@ -71,7 +75,7 @@ const Join = () => {
     }
     const onJoinSubmitHandler = (e) => {
         e.preventDefault();
-        if(joinID=="" || joinPW=="" || joinPWCon=="") {
+        if(joinID==="" || joinPW==="" || joinPWCon==="") {
             alert("필수 정보를 입력하세요.")
         }
         else if(idOverlap) {
@@ -177,14 +181,14 @@ const Join = () => {
                         </div>
                     </div>
                 </div>
-                <div className="agree_button">
-                    <Link to="/login">
-                        <LoginButton text={"가입하기"} onClick={onJoinSubmitHandler}/>
-                    </Link>
-                    <Link to="/login">
-                        <LoginButton text={"취소"} type={"no"} />
-                    </Link>
-                </div>
+            </div>
+            <div className="agree_button">
+                <Link to="/login">
+                    <LoginButton text={"가입하기"} onClick={onJoinSubmitHandler}/>
+                </Link>
+                <Link to="/agree">
+                    <LoginButton text={"취소"} type={"no"} />
+                </Link>
             </div>
         </div>
     );

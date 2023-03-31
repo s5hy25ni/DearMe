@@ -3,8 +3,6 @@ import React, { useEffect, useReducer, useRef } from "react";
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import axios from 'axios';
-
 import Home from "./pages/Home";
 import New from "./pages/New";
 import Edit from "./pages/Edit";
@@ -115,6 +113,7 @@ function App() {
           <div className="App">
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/home" element={<Home />} />
               <Route path="/new" element={<New />} />
               <Route path="/edit/:id" element={<Edit />} />
               <Route path="/diary/:id" element={<Diary />} />

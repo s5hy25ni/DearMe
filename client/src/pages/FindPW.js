@@ -1,11 +1,15 @@
-import { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import LoginHeader from './../components/LoginHeader'
 import LoginInputBox from './../components/LoginInputBox'
 import LoginButton from './../components/LoginButton'
 
 const FindPW = () => {
+    const navigate = useNavigate();
+    if(localStorage.getItem('isLogin') === 'true' || sessionStorage.getItem('isLogin') === 'true') {
+        navigate("/");
+    }
+
     return (
             <div className="login_wrap">
                 <div className="login_box">

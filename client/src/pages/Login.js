@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import LoginHeader from './../components/LoginHeader'
@@ -8,6 +8,10 @@ import axios from "axios";
 
 const Login = () => {
     const navigate = useNavigate();
+
+    if(localStorage.getItem('isLogin') === 'true' || sessionStorage.getItem('isLogin') === 'true') {
+        navigate("/");
+    }
 
     const [ loginID, setLoginID ] = useState("");
     const [ loginPW, setLoginPW ] = useState("");
@@ -21,7 +25,7 @@ const Login = () => {
     };
 
     const onLoginSubmitHandler = (e) => {
-        if(loginID=="" || loginPW=="") {
+        if(loginID==="" || loginPW==="") {
             alert("아이디, 비밀번호를 입력하세요.")
         }
         else{
@@ -40,7 +44,7 @@ const Login = () => {
         })
         .then((res)=> {
             if(res.data.message === "loginSuccess") {
-                if(document.getElementsByName("keepLogin")[0].value==="keep"){
+                if(document.getElementsByName('keepLogin')[0].checked){
                     localStorage.setItem('id', loginID)
                     localStorage.setItem('isLogin', 'true')
                 }
@@ -81,7 +85,7 @@ const Login = () => {
                     <div className="login_footer">
                         <div className="login_footer_left">
                             <label>
-                                <input type="checkbox" name="keepLogin" value="keep"/>로그인 상태 유지
+                                <input type="checkbox" name="keepLogin" value="keep" />로그인 상태 유지
                             </label>
                         </div>
                         <div className="login_footer_right">
@@ -91,7 +95,7 @@ const Login = () => {
                             <Link to="/findpw">
                                 <button>비밀번호 찾기</button>
                             </Link>
-                            <Link to="/join">
+                            <Link to="/agree">
                                 <button>회원가입</button>
                             </Link>
                         </div>

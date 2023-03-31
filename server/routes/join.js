@@ -12,10 +12,7 @@ router.post('/', (req, res) => {
     var pw = req.body.pw
     const pw_hash = crypto.createHash('sha512').update(pw + salt).digest('hex');
     var name = req.body.name
-    const name_hash = crypto.createHash('sha512').update(name + salt).digest('hex');
     var pn = req.body.pn
-    const pn_hash = crypto.createHash('sha512').update(pn + salt).digest('hex');
-    var int = req.body.int
 
     console.log("state : "+state)
 
@@ -32,8 +29,8 @@ router.post('/', (req, res) => {
         })
     }
     else if (state === "join") {
-        mysql.query('INSERT INTO user_info(user_id, user_salt, user_pw_hc, user_name_hc, user_phone_hc) VALUES(?, ?, ?, ?, ?);',
-            [id, salt, pw_hash, name_hash, pn_hash],
+        mysql.query('INSERT INTO user_info(user_id, user_salt, user_pw_hc, user_name, user_phone) VALUES(?, ?, ?, ?, ?);',
+            [id, salt, pw_hash, name, pn],
             function(error, result){
                 if(!error){
                     res.json({message : "joinSuccess"})

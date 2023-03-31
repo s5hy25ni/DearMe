@@ -1,18 +1,44 @@
-import { useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import LoginHeader from './../components/LoginHeader'
 import LoginButton from './../components/LoginButton'
 
 const Agree = () => {
     const navigate = useNavigate();
+    if(localStorage.getItem('isLogin') === 'true' || sessionStorage.getItem('isLogin') === 'true') {
+        navigate("/");
+    }
+
+    const checkboxes = document.getElementsByName('agree');
+
+    const allCheck = (e) => {        
+        if (document.getElementsByName('allAgree')[0].checked===true){
+            for(var i=0; i<checkboxes.length; i++) {
+                checkboxes[i].checked = true
+            }
+        }
+        else {
+            for(var i=0; i<checkboxes.length; i++) {
+                checkboxes[i].checked = false
+            }
+        }
+    }
+
+    const onAgreeSubmitHandler = (e) => {
+        if(checkboxes[0].checked===false || checkboxes[1].checked===false) {
+            alert("Dear.me 이용약관과 개인정보 수집 및 이용에 대한 안내 모두 동의해주세요.")
+        } else{
+            navigate("/join");
+        }
+    }
+
     return (
         <div>
             <LoginHeader/>
             <div className="agree_wrap">
                 <div className="agree_top">
                     <label>
-                        <input type="checkbox" />
+                        <input type="checkbox" name="allAgree" onClick={(allCheck)}/>
                         Dear.Me 이용약관, 개인정보 수집 및 이용, 위치기반서비스 이용약관에 모두 동의합니다.
                     </label>
                 </div>
@@ -20,7 +46,7 @@ const Agree = () => {
                     <div className="agree_box">
                         <div className="agree_title">
                             <label>
-                                <input type="checkbox" />
+                                <input type="checkbox" name="agree"/>
                                 Dear.Me 이용약관 동의 <span>(필수)</span>
                             </label>
                         </div>
@@ -147,7 +173,7 @@ const Agree = () => {
                     <div className="agree_box">
                         <div className="agree_title">
                             <label>
-                                <input type="checkbox" />
+                                <input type="checkbox" name="agree"/>
                                 개인정보 수집 및 이용 동의 <span>(필수)</span>
                             </label>
                         </div>
@@ -193,7 +219,7 @@ const Agree = () => {
                     <div className="agree_box">
                         <div className="agree_title">
                             <label>
-                                <input type="checkbox" />
+                                <input type="checkbox" name="agree"/>
                                 위치기반서비스 이용약관 동의 <span style={{color:'grey'}}>(선택)</span>
                             </label>
                         </div>
@@ -284,8 +310,10 @@ const Agree = () => {
                     </div>
                 </div>
                 <div className="agree_button">
-                    <LoginButton text={"확인"} />
-                    <LoginButton text={"취소"} type={"no"} />
+                    <LoginButton text={"확인"} onClick={(onAgreeSubmitHandler)} />
+                    <Link to="/login">
+                        <LoginButton text={"취소"} type={"no"} />
+                    </Link>
                 </div>
             </div>
         </div>

@@ -1,12 +1,16 @@
 import { useContext, useEffect, useState } from "react";
 import { DiaryStateContext } from "../App";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import MyHeader from './../components/MyHeader'
 import MyButton from './../components/MyButton'
 import DiaryList from './../components/DiaryList'
 
 const Home = () => {
+    const navigate = useNavigate();
+    if(localStorage.getItem('isLogin') !=='true' && sessionStorage.getItem('isLogin') !=='true') {
+        navigate("/login");
+    }
 
     const diaryList = useContext(DiaryStateContext);
 
