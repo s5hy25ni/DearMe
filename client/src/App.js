@@ -14,7 +14,7 @@ import MyPage from "./pages/MyPage";
 import Agree from "./pages/Agree";
 import Join from "./pages/Join";
 import CheckDepression from "./pages/CheckDepression";
-import RecommendVideo from "./pages/RecommendVideo";
+import SelectVideo from "./pages/SelectVideo.js";
 
 
 const reducer = (state, action) => {
@@ -124,7 +124,7 @@ function App() {
               <Route path="/agree" element={<Agree />} />
               <Route path="/join" element={<Join />} />
               <Route path="/checkDepression" element={<CheckDepression />} />
-              <Route path="/recommendVideo" element={<RecommendVideo />} />
+              <Route path="/selectVideo" element={<SelectVideo />} />
             </Routes>
           </div>
         </BrowserRouter>
