@@ -1,11 +1,7 @@
-<<<<<<< HEAD
 import { useNavigate } from "react-router-dom";
 import LoginHeader from '../components/CheckHeader'
-=======
 import { useContext, useEffect, useState } from "react";
 
-import LoginHeader from '../components/CheckHeader';
->>>>>>> ddf593977aa7047ac7a932d2fe883a42efe3bf1d
 
 const CheckDepression = () => {
   const navigate = useNavigate();

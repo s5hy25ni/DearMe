@@ -30,6 +30,7 @@ const MyPage = () => {
                 salt = res.data.salt;
                 pw_hc = res.data.pw_hc;
                 name = res.data.name;
+                console.log(name);
                 pn = res.data.pn;
             }
             else {
