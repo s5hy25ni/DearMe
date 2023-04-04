@@ -37,22 +37,21 @@ const DiaryList = ({diaryList}) => {
     const diaryCheck = (item) => {
         // 현재날짜
         const today = new Date().toLocaleDateString();
-        
-        if (today) { //해당 월에 첫 글이 아니면 비교
+        const diary = document.getElementsByClassName('DiaryItem');
+
+        if (diary.length) { //해당 월에 작성된 글이 있는 경우
             // 마지막작성일
             const strDate = document.getElementsByClassName('diary_date')[0].innerText;
             // 마지막 작성일과 현재날짜 동일시 alert발동
             if (strDate == today) {
-                console.log("1");
-                    alert("이미 작성하신 일기가 있습니다.")
-              } else { //당일 작성글 없으면 글쓰기페이지이동
-                console.log("2");
-                    navigate("/new")
-              }
-        } else { // 해당 월에 첫 글 작성시 비교대상X
+                alert("당일 작성하신 일기가 있습니다.");
+            } else { //당일 작성글 없으면 글쓰기페이지이동
+                navigate("/new");
+            }
+        } else { //해당 월에 작성한 글이 없는 경우
             navigate("/new");
-            console.log("3");
-        }
+            console.log("해당 월에 첫글입니다");
+        };
     };
 
     const getProcessedDiaryList = () => {
