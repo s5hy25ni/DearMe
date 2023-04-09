@@ -25,8 +25,8 @@ app.use(express.static(__dirname + './routes'));
 // var agree = require('./routes/agree');
 // var diary = require('./routes/diary')
 // var edit = require('./routes/edit');
-// var findid = require('./routes/findid')
-// var findpw = require('./routes/findpw');
+var findid = require('./routes/findid');
+var findpw = require('./routes/findpw');
 // var home = require('./routes/home')
 var join = require('./routes/join');
 var login = require('./routes/login')
@@ -36,8 +36,8 @@ var mypage = require('./routes/mypage');
 // app.use('/agree', agree);
 // app.use('/diary', diary);
 // app.use('/edit', edit);
-// app.use('/findid', findid);
-// app.use('/findpw', findpw);
+app.use('/findid', findid);
+app.use('/findpw', findpw);
 // app.use('/', home);
 app.use('/join', join);
 app.use('/login', login);

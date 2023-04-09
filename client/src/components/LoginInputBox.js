@@ -1,6 +1,6 @@
 import { React } from "react";
 
-const LoginInputBox = ({ title, type, id, onChange }) => {
+const LoginInputBox = ({ title, type, id, onChange, placeholder }) => {
 
   return (
     <div className="login_input_box">
@@ -9,6 +9,7 @@ const LoginInputBox = ({ title, type, id, onChange }) => {
           <input
             type={type}
             id={id}
+            placeholder={placeholder}
             onChange={onChange}
           />
         </div>
